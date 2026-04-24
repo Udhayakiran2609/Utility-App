@@ -1,0 +1,95 @@
+.register-page{
+    margin-top: 15px;
+}
+
+.login-register{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.login-register a{
+  text-decoration: none;
+  padding:0 20px;
+}
+.register{
+    width: 90%;
+    margin: 0 auto;
+    margin-left: 40px;
+}
+.register label{
+    color: rgb(71, 71, 71);
+    margin-top: 20px;
+}
+.register input{
+    width: 95%;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid grey;
+    outline: none;
+    margin-top: 5px;
+    padding:10px;
+    font-size: 16px;
+
+}
+.register input:hover{
+    border-left: 3px solid red;
+}
+.register input:focus{
+    border-left: 3px solid red;
+    box-shadow: 0px 0px 5px grey;
+}
+#registerDone{
+    border: none !important;
+    outline: none !important;
+    background-color: black;
+    color: white;
+    width: 98%;
+    padding:8px 10px;
+    border-radius: 5px;
+}
+/* #registerDone:hover{
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+} */
+ 
+.register .register-btn{
+    background-color: black;
+    color: white;
+    width: 98%;
+}
+.register .register-btn:hover{
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+}
+.phonenumber-input{
+   padding-left:40px !important ;
+}
+.register .forp{
+    margin-top: 20px;
+}
+.register p a {
+    text-decoration: none;
+}
+
+#email-validation{
+    position: relative;
+}
+#email-validation p{
+    position: absolute;
+    top: 92px;
+    color: red;
+}
+#number-validation{
+    position: relative;
+}
+#invalidNumber{
+    position: absolute;
+    top: 92px;
+    color: red;
+}
+.imagegif{
+    width: 28px;
+    height: 28px;
+}

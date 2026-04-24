@@ -1,0 +1,24 @@
+<div class="login-page">
+    <div class="login-register" style="margin-top: -15px;">
+        <a href="#!/login" ng-class="activelogin ? 'active-page':'disactive-page'" ng-click="redirectLogin()">Login</a>
+        <a href="#!/register" ng-class="registerlogin ? 'active-page':'disactive-page'" ng-click="redirectregister()">Register</a>
+    </div>
+    <div class="login">
+        <form action="" style="width: 100%;">
+            <label for="">Email or Phonenumber</label><br>
+            <input type="text" name="" id="" placeholder="Enter your email or phonenumber" ng-model="email"><br>
+            <p style="color: red; margin-top: -1px;" ng-if="emailpasswordempty">Please enter value</p>
+            <p style="color: red; margin-top: -1px;" ng-if="emailempty">Please enter email or phonenumber</p>
+            <p style="color: red; margin-top: -1px;" ng-if="invalidemail">Invalid email or phonenumber</p>
+            <p style="color: red; margin-top: -1px;" ng-if="invalidphonenumber">Invalid phonenumber</p>
+            <label for="">Password</label><br>
+            <input type="password" name="" id="" placeholder="Password" ng-model="password">
+            <p style="color: red; margin-top: -1px;" ng-if="invalidpassword">Invalid password</p>
+            <p style="color: red; margin-top: -1px;" ng-if="emailpasswordempty">Please enter value</p>
+            <p style="color: red; margin-top: -1px;" ng-if="passwordempty">Please enter your password</p>
+            <p>Don't have an account? <a href="#!/register" ng-click="redirectregister()">Signup</a></p>
+            <a href="" class="btn loginbtn" ng-click="login(email, password)" id="loginDone">Login <img id="loadingLogin"></a>
+            <!-- <a href="#!/" class="btn" style="margin-top: 5px;">Login as guest</a> -->
+        </form>
+    </div>
+</div>

@@ -1,0 +1,369 @@
+
+.signout{
+
+    text-decoration: none;
+    color: white;
+}
+
+.signoutBtn{
+    border: none;
+    outline: none;
+    background-color: rgb(47, 97, 172); 
+    border-radius: 5px;
+    padding: 3px;
+}
+
+
+.mainpage-row{
+    display: flex;
+    flex-direction: column;
+    height: 84.4vh;
+    background-color: rgba(0,0,0,0.7);
+}
+.mainpage-row div{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.mainpage-row div img{
+    width: 50px;
+    height: 50px;
+}
+.mainpage-row div p{
+    color: white;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+.active-div{
+    background-color: #8d8d8d !important;
+}
+/* .setImage-div{
+ margin-top: 10px;
+} */
+.setImage-div-block{
+    display: block !important;
+   
+}
+.image-resizer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    height: 90%;
+    /* width: 100%; */
+    margin-bottom: 20px;
+}
+.image-resizer-choose-file{
+    width: 150px;
+    height: 80px;
+    background-color: rgb(125 154 219);
+    /* padding: 10px 3px; */
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.image-resizer-choose-file label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+.img-width-height{
+    margin: 20px auto 0;
+    margin-left: 78px;
+    /* display: flex;
+    justify-content: space-around; */
+    /* width: 100%; */
+}
+.img-width-height input{
+    outline: none;
+    border: none;
+    border: 1px solid black;
+    padding: 5px 0 5px 10px;
+    border-radius: 5px;
+    width: 44%;
+}
+.img-width-height input:hover{
+    border-left: 3px solid red;
+}
+.img-width-height input:focus{
+    border-left: 3px solid red;
+    box-shadow: 0px 0px 5px grey;
+}
+.convert-btn{
+    /* background-color: rgb(54, 160, 59); */
+    border-radius: 5px;
+    /* padding:3px 8px; */
+    color: white !important;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* preview modal */
+.preview-page{
+    /* background-color: rgb(255, 255, 255); */
+    height: 89.5vh;
+}
+.saved-preview h3{
+    text-align: center;
+    margin-left: 220px;
+}
+.backBtn{
+    display: flex;
+    padding: 14px 0;
+    height: 56px;
+}
+.backBtn img{
+    height: 28px; 
+    width: 28px;
+    margin-left: 20px;
+    margin-top: -13px;
+}
+.saved-videos{
+    height: 370px;
+    /* overflow: scroll; */
+    /* background-color: white; */
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.video-modal{
+    position: absolute;
+    top:45px;
+    left: 85px;
+}
+.image-modal{
+    position: absolute;
+    top: 65px;
+    left: 85px;
+}
+
+
+#startRecording{
+ background-color: rgb(236 231 255);
+}
+/* }
+.dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+} */
+
+
+
+
+
+.preview-modals-1{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(51, 51, 51);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.preview-modal{
+    width: 350px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    opacity: 1;
+
+}
+.preview-modal p {
+    color: black;
+    letter-spacing: 1px;
+    line-height: 30px;
+    
+}
+.preview-modal img{
+   margin-top: -17px;
+}
+tr td{
+    padding: 0px 10px !important;
+}
+.whenImageDone{
+    display: none !important;
+}
+.previewTrue{
+   
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+.previewTrue a{
+    margin-top: 15px;
+}
+.green{
+    background-color: rgb(108, 241, 108) !important;
+}
+.notSaved{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 100px;
+}
+.notSaved h3{
+    color: rgb(104, 104, 104);
+}
+
+
+
+/* Screen Recorder */
+
+.row-start-stop{
+    display: flex;
+    width: 60%;
+    margin: 10px auto 0;
+    justify-content: space-around;
+
+}
+.row-start-stop div button{
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+
+}
+.row-start-stop div button img{
+    background-color: whitesmoke !important;
+}
+.row-start-stop div button:active{
+    box-shadow: 0px 0px 3px grey;
+}
+/* #startRecording{
+    background-color: white;
+} */
+#videoElement{
+    width: 348px;
+    height: 200px;
+}
+.successfull{
+    width: 348px;
+    height: 200px;
+    background-color: black;
+    text-align: center;
+    margin: 0 auto;
+}
+.successfull h2{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 25%;
+}
+.onload-preview{
+     text-align: center;
+    margin-top: 30px;
+}
+
+
+/* ClipBoard */
+
+.clipboardNameInput{
+    text-align: center;
+    margin-top: 30px;
+}
+.clipboardNameInput input{
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+.clipboardNameInput input:focus{
+    box-shadow: 0px 0px 3px gray;
+}
+.clipboard-text-area{
+    text-align: center;
+
+}
+.clipboard-text-area textarea{
+    resize: none;
+    width: 350px;
+    height: 200px;
+    border: none;
+    outline: none;
+    border: 1px solid gray;
+}
+.clipboardSave{
+    width: 350px;
+    margin: 0 auto;
+    text-align: right;
+
+}
+.clipboardSave button{
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
+.save-as{
+  font-size: 18px;
+}
+
+
+
+
+
+.scroll::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+  }
+  
+  /* Track */
+  .scroll::-webkit-scrollbar-track {
+    background: #ffffff;   
+    cursor: pointer; 
+  }
+   
+  /* Handle */
+  .scroll::-webkit-scrollbar-thumb {
+    background: #bdbdbd; 
+    cursor: pointer;
+  }
+  
+  /* Handle on hover */
+  .scroll::-webkit-scrollbar-thumb:hover {
+    background: #9c9c9c; 
+  }
+
+
+.scroll-1::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+  }
+  
+  /* Track */
+  .scroll-1::-webkit-scrollbar-track {
+    background: #ffffff;   
+    cursor: pointer; 
+  }
+   
+  /* Handle */
+  .scroll-1::-webkit-scrollbar-thumb {
+    background: #ffffff; 
+    cursor: pointer;
+  }
+  
+  /* Handle on hover */
+  .scroll-1::-webkit-scrollbar-thumb:hover {
+    background: #ffffff; 
+  }

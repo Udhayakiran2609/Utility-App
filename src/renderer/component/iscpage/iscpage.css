@@ -1,0 +1,47 @@
+.ipcpage{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; */
+  
+}
+.welcome-user{
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.welcome-user a{
+    background-color: red;
+    color: white;
+}
+.welcome-user a:hover{
+    background-color: red;
+    color: white;
+    opacity: 0.8;
+}
+.iscpage_img{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    justify-content: space-around;
+    height: 70vh;
+    align-items: center;
+}
+.iscpage_img a{
+    text-decoration: none;
+    color: black;
+}
+.iscpage_img a:hover{
+    color: red;
+}
+.iscpage_img img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.iscpage_img img:hover{
+    transform: scale(0.9);
+}

@@ -1,0 +1,358 @@
+<div>
+    <!-- <div class="welcome-user" style="margin-top: 10px;">
+        <h3 style="color: grey;">Welcome <span style="text-transform: capitalize;">{{currentUser.firstname}}</span>
+            {{currentUser.lastname}}</h3>
+        <a href="#!/login" class="btn" ng-click="logout()">Logout</a>
+    </div> -->
+    <nav class="" style="padding: 8px; background-color: rgb(177 169 207);" ng-if="navbarTrue">
+        <div class="container-fluid" style="display: flex; justify-content: space-between;">
+            <div>
+                <a href="#!/iscpage"><img src="../../assests/back.png" alt="" style="height: 28px; width: 28px;" ng-click="backhome()"></a>
+            </div>
+            <div>
+                <h5 style="text-transform: capitalize; color: rgb(75, 75, 75);">Welcome {{currentUser.firstname}}{{currentUser.lastname}}</h4>
+            </div>
+            <div>
+                <button class="signoutBtn">
+                    <a href="#" class="signout" ng-click="logout()">Signout</a>
+                    <img src="../../assests/logout.png" alt="" style="width: 24px; height: 24px;">
+                </button>
+               
+            </div>
+            
+          <!-- <a class="navbar-brand" href="#">
+            <img src="../../assests/isclogo.png" alt="logo" width="50" height="40">
+          </a> -->
+        </div>
+      </nav>
+    <div class="col-lg-12 image-resize" style="display: flex;">
+        <div class="col-3" ng-if="iscapplication">
+            <div class="mainpage-row">
+                <div id="image-resizer" ng-click="imageResizer()" ng-class="imageactive ? 'active-div':'active-two'">
+                    <img src="../../assests/imageresizer_icon.png" alt="">
+                    <p>Image Resizer</p>
+                </div>
+                <div id="screen-recorder" ng-click="screenRecorder()" ng-class="screenrecordactive ? 'active-div':'active-two'">
+                    <img src="../../assests/recorder_icon.png" alt="">
+                    <p>Screen Recorder</p>
+                </div>
+                <div id="clipboard" ng-click="clipBoard()" ng-class="clipboardactive ? 'active-div':'active-two'">
+                    <img src="../../assests/clipboard_icon.png" alt="">
+                    <p>Clipboard</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-9" ng-show="imageresizetrue">
+            <div class="image-resizer">
+                <div class="setImage-div">
+                    <img src="" alt="" id="setImage" style="height: 100px; width: 100px; display: none;">
+                </div>
+                <div class="image-resizer-choose-file">
+                    <label for="choosefiles">Select Image</label>
+                    <input type="file" accept="image/*" style="display: none;" ng-model="selectedimage"
+                        onchange="angular.element(this).scope().selectedImg(event)" id="choosefiles">
+                    <img src="../../assests/select_img_icon.png" alt="">
+                </div>
+                <div class="img-width-height" style="display: none;">
+                    <input type="number" name="" id="widthVal" placeholder="Width" min="1" ng-model="widthValue">
+                    <input type="number" name="" id="heightVal" placeholder="Height" min="1" ng-model="heightValue">
+                </div>
+                <p  style="color: red; display: none;" class="whenTrue">Please enter the width and height value</p>
+                <p  style="color: red; display: none;" class="whenwidthTrue">Please enter the value of width</p>
+                <p  style="color: red; display: none;" class="whenheightTrue">Please enter the value of height</p>
+            
+                <div class="previewTrue">
+                    <a href="" ng-click="resize(widthValue, heightValue)" class="btn btn-danger resize-one" id="resize" style="display: none;">Resize</a>
+                    <a href="" class="btn btn-warning preview-one" ng-click="preview()">Preview</a>
+                </div>
+                
+                    
+              
+                <div class="convert-btn" style="display: none;">
+                    <div style="display: flex; justify-content: space-around; width: 105%;">
+                        <div>
+                            <a href="" class="btn btn-primary" ng-click="save(widthValue, heightValue)">Save</a>
+                        </div>
+                        <div>
+                            <a href="" class="btn btn-success"
+                                ng-click="convertImage(widthValue, heightValue, files)">Downlaod</a>
+                        </div>
+                        <div>
+                            <a href="" class="btn btn-warning" ng-click="preview()">Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div ng-show="screenrecordertrue" class="col-9">
+            <div class="screen-recorder" style="    margin-top: 35px;">
+                <!-- <video src="" class="aaa" controls style="height: 300px; height: 250px;"></video> -->
+                <div style="text-align: center; margin-top: 10px;display: none;" class="videorecord">
+                    <video id="videoElement" autoplay ></video>
+                </div>
+                <div class="successfull" style="margin-top: 10px;">
+                    <h2 class="forchangingAction">Click start to record</h2>
+                </div>
+                
+                <div class="row-start-stop">
+                    <div>
+                        <button ng-click="startBtn()" class="RemoveWhenStart">Start <img src="../../assests/start.png" alt="" style="height: 32px; width: 32px;"></button>
+                        <!-- <span style="display: none; padding-top: 8px;" id="startRecording">Rec <span class="dot">.</span></span> -->
+                        <span style="display: none; padding-top: 8px;" id="startRecording"><img src="../../assests/recording_gif.gif" alt="" style="height: 95px; width: 95px; margin-top: -34px;"></span>
+                    </div>
+                    <div>
+                        <button ng-click="stopBtn()">Stop <img src="../../assests/stop.png" alt=""  style="height: 32px; width: 32px;"></button>
+                    </div>
+                 
+                </div>
+                <div class="onload-preview">
+                    <a href="" class="btn btn-warning" ng-click="previewVideo()">Preview</a>
+                </div>
+                <div class="video-btns" style="margin-top: 20px; display: none;">
+                    <!-- style="display: none;" -->
+                    <div style="display: flex; justify-content: space-around; width: 100%;">
+                        <div>
+                            <a href="" class="btn btn-primary" ng-click="saveVideo()">Save</a>
+                        </div>
+                        <div>
+                            <a href="" class="btn btn-success" ng-click="downloadVideo()">Downlaod</a>
+                        </div>
+                        <div>
+                            <a href="" class="btn btn-warning preview-one" ng-click="previewVideo()">Preview</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button id="startBtn" ng-click="startBtn()">Start Recording</button>
+            <button id="stopBtn" ng-click="stopBtn()">Stop Recording</button>
+            <video id="videoElement" autoplay style="display: none;"></video>
+            <button id="videoSelectBtn" class="button is-text">
+                Choose a Video Source
+            </button> -->
+            <!-- <button ng-click="showrecoredControl()">show recored Control</button> -->
+        </div>
+      
+
+        <div ng-show="clipboardtrue" class="col-9">
+            <div class="clipboardNameInput">
+                <span class="save-as">Save as</span><input type="text" placeholder="Filename" id="filename">
+            </div>
+            <div class="clipboard-text-area">
+                <textarea name="" id="copiedInput" cols="30" rows="10" class="scroll" ng-modal="inputText"></textarea>
+            </div>
+            <div class="clipboardSave">
+                <button ng-click="saveText(inputText)">Save file</button>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- Image Preview page -->
+
+<!-- <div ng-if="videoView">
+    <div class="preview-modals-1" ng-click="closeModalVideo()"> 
+    </div>
+    <div class="video-modal" ng-if="convertedblogUrl.length">
+        <video src="{{record}}" controls autopla style="width: 300px; height: 160px;" ng-repeat="record in convertedblogUrl"></video>
+    </div>
+</div> -->
+
+<div ng-if="previewmodaltrue" id="previewmodaltrue" class="col-lg-12">
+    <div class="preview-page">
+        <div class="backBtn">
+            <div>
+            <img src="../../assests/back.png" alt="" ng-click="backBtnImg()">
+            </div>
+            <div class="saved-preview">
+                <h3><em>Saved Images</em></h3>
+            </div>
+        </div>
+        <div ng-if="currentUserResizedImage.length == 0" style="margin-top: 18%;">
+            <h4 style="text-align: center; color: rgb(34, 34, 34);">No saved resize images</h4>
+        </div>
+        <div class="saved-videos scroll-1" ng-if="currentUserResizedImage.length>0">
+            <table class="" style="text-align: center; width: 100%; margin-top: 20px;">
+                <thead>
+                  <tr>
+                    <th scope="col">Filename</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">View photo</th>
+                    <th scope="col">Download</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="resizeimage in currentUserResizedImage" style="margin-top: 20px;" >
+                        <td>
+                            <p style="padding-top: 14px;">{{resizeimage.filename}}</p>
+                        </td>
+                        <td>
+                            <p style="padding-top: 14px;">{{resizeimage.width}} &times; {{resizeimage.height}}</p>
+                        </td>
+                        <td> <img src="../../assests/view.png" alt="" style="width: 24px; height: 24px;"
+                            ng-click="viewimage(resizeimage)" id="image_{{resizeimage.filename}}"></td>
+                        <td> <img src="../../assests/download.png" alt="" style="width: 24px; height: 24px;"
+                                ng-click="download(resizeimage)" id="image_{{resizeimage.filename}}"></td>
+                        <td><img
+                            src="../../assests/trash.png" alt="" style="width: 24px; height: 24px;"
+                            ng-click="delete(resizeimage)"></td>
+                        
+                    </tr>
+
+                </tbody>
+              </table>
+        </div>
+        
+    </div>
+</div>
+
+<!-- image preview page -->
+<div ng-if="imageView">
+    <div class="preview-modals-1" ng-click="closeModal()"> 
+    </div>
+    <div class="image-modal" ng-if="imageurl.length">
+        <img src="{{image}}" style="width: 520px; height: 375px;" ng-repeat="image in imageurl"> 
+    </div> 
+</div>
+
+
+
+
+<!--  Video  preview page -->
+<div ng-if="videoView">
+    <div class="preview-modals-1" ng-click="closeModalVideo()"> 
+    </div>
+    <div class="video-modal" ng-if="convertedblogUrl.length">
+        <video src="{{record}}" controls autoplay style="width: 520px; height: 375px;" ng-repeat="record in convertedblogUrl"></video>
+    </div>
+</div>
+
+
+
+<div ng-if="previewmodalvideotrue" id="previewmodalVideotrue" class="col-lg-12">
+    <div class="preview-page">
+        <div class="backBtn">
+            <div>
+            <img src="../../assests/back.png" alt="" ng-click="backBtn()">
+            </div>
+            <div class="saved-preview">
+                <h3><em>Saved Videos</em></h3>
+            </div>
+        </div>
+        <div ng-if="currentRecorderVideo.length == 0" style="margin-top: 18%;">
+            <h4 style="text-align: center; color: rgb(34, 34, 34);">No saved screen recording</h4>
+        </div>
+        <div class="saved-videos scroll-1" ng-if="currentRecorderVideo.length>0">
+            <table class="" style="text-align: center; width: 100%;  margin-top: 20px;">
+                <thead>
+                  <tr>
+                    <th scope="col">Filename</th>
+                    <th scope="col">View Video</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="recordVideo in currentRecorderVideo" style="margin-top: 20px;">
+                        <td>
+                            <p style="padding-top: 14px;">{{recordVideo.filename}}</p>
+                        </td>
+                        <td style="text-align: center;"> <img src="../../assests/view.png" alt="" style="width: 32px; height: 32px;"
+                                ng-click="downloadVideoFromPreview(recordVideo)" id="image_{{resizeimage.recordVideo}}"></td>
+                       <td><img
+                        src="../../assests/trash.png" alt="" style="width: 24px; height: 24px;"
+                        ng-click="deleteVideo(recordVideo)"></td>
+                    </tr>
+
+                </tbody>
+              </table>
+        </div>
+        
+        
+        
+    </div>
+</div>
+  
+
+
+
+
+
+<!-- Preview popup -->
+
+<!-- <div class="preview-modals" ng-if="previewmodaltrue" id="previewmodaltrue">
+    <div class="preview-modals-1" ng-click="closeModal()">
+
+    </div>
+    <div class="preview-modal">
+        <div>
+            <div ng-if="currentUserResizedImage.length == 0" class="notSaved">
+                <h3>Not saved yet</h3>
+            </div>
+            
+            <table ng-if="currentUserResizedImage.length>0">
+                <tr style="text-align: center;">
+                    <th>Filename</th>
+                    <th>Size</th>
+                    <th>Options</th>
+                </tr>
+                
+                <tr ng-repeat="resizeimage in currentUserResizedImage" style="margin-top: 20px;" >
+                    <td>
+                        <p>{{resizeimage.filename}}</p>
+                    </td>
+                    <td>
+                        <p>{{resizeimage.width}} &times; {{resizeimage.height}}</p>
+                    </td>
+                    <td> <img src="../../assests/download.png" alt="" style="width: 24px; height: 24px;"
+                            ng-click="download(resizeimage)" id="image_{{resizeimage.filename}}"><img
+                            src="../../assests/trash.png" alt="" style="width: 24px; height: 24px;"
+                            ng-click="delete(resizeimage)"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="preview-modals" ng-if="previewmodalvideotrue" id="previewmodalVideotrue">
+    <div class="preview-modals-1" ng-click="closeModalVideo()"> 
+
+    </div>
+    <div class="preview-modal">
+        <div>
+            <div ng-if="currentRecorderVideo.length == 0" class="notSaved">
+                <h3 >Not saved yet</h3>
+            </div>
+            <video src="{{record}}" style="width: 200px; height: 100px;" controls autoplay ng-repeat="record in convertedblogUrl" ng-if="convertedblogUrl.length"></video>
+            <table ng-if="currentRecorderVideo.length>0">
+                <tr style="text-align: center;">
+                    <th>Filename</th>
+                    <th>Options</th>
+                </tr>
+                
+                <tr ng-repeat="recordVideo in currentRecorderVideo" style="margin-top: 20px;" >
+                    <td>
+                        <p>{{recordVideo.filename}}</p>
+                    </td>
+                    <td> <img src="../../assests/download.png" alt="" style="width: 24px; height: 24px;"
+                            ng-click="downloadVideoFromPreview(recordVideo)" id="image_{{resizeimage.recordVideo}}"><img
+                            src="../../assests/trash.png" alt="" style="width: 24px; height: 24px;"
+                            ng-click="deleteVideo(recordVideo)"></td>
+                   
+                </tr>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div ng-if="previewmodalvideotrue">
+    
+    
+</div> -->
+

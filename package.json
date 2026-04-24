@@ -1,0 +1,73 @@
+{
+  "name": "Iscify",
+  "productName": "Iscify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./release/app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && electron .",
+    "watch": "nodemon --exec electron .",
+    "make:win:zip": "electron-builder build -w zip",
+    "make:win": "electron-builder build -w", 
+    "make:lin": "electron-builder build --linux deb", 
+    "make:mac": "electron-builder build -m",
+    "build": "webpack",
+    "postinstall": "electron-builder install-app-deps",
+    "rebuild": "electron-rebuild -f -w",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=false --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=false --out=release-builds"
+  },
+  "author": "udhayakiran <udhaya@kiran.com>",
+  "homepage": "undefined",
+  "license": "ISC",
+  "build": {
+    "appId":"com.udhayakiran.isc",
+    "win": {
+      "icon": "./build/assests/isc.ico"
+    },
+    "linux":{
+      "target": "deb",
+      "icon":"./build/assests/linuxicon.icns"
+    },
+    "mac": {
+      "target" :"dmg"
+    }
+  },
+  "devDependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.3",
+    "assert": "~1.1.1",
+    "async": "~0.9.0",
+    "babel-loader": "^9.1.3",
+    "bootstrap": "^5.3.2",
+    "core-js": "^3.34.0",
+    "css-loader": "^6.8.1",
+    "dotenv-webpack": "^8.0.1",
+    "electron": "^27.1.3",
+    "electron-builder": "^24.9.1",
+    "electron-packager": "^17.1.2",
+    "electron-rebuild": "^3.2.9",
+    "electron-reloader": "^1.2.3",
+    "electron-renderer": "^2.0.4",
+    "firebase": "^10.7.1",
+    "fs-extra": "~0.10.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.4",
+    "imports-loader": "^4.0.1",
+    "jquery": "^3.7.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "node-loader": "^2.0.0",
+    "nodemon": "^3.0.1",
+    "postcss-loader": "^7.3.3",
+    "regenerator-runtime": "^0.14.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.10.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

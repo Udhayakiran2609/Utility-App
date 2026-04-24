@@ -1,0 +1,49 @@
+<div>
+    <div class="register-page">
+        <div class="login-register">
+            <a href="#!/login" ng-class="activelogin ? 'active-page':'disactive-page'" ng-click="redirectLogin()">Login</a>
+            <a href="#!/register" ng-class="registerlogin ? 'active-page':'disactive-page'" ng-click="redirectregister()">Register</a>
+        </div>
+        <div>
+            <form class="g-3 register" style="display: flex; flex-wrap: wrap;"  name="form" novalidate>
+                <div class="col-6" style="position: relative;">
+                    <label for="">Firstname</label><br>
+                    <input type="text" placeholder="Enter your fistname" ng-model="firstname" ng-change="firstnameValidation(firstname)"><br>
+                    <p ng-if="firstnameValid" id="invalidNumber">Please enter firstname</p>
+                </div>
+                <div class="col-6" style="position: relative;">
+                    <label for="">Lastname</label><br>
+                    <input type="text" placeholder="Enter your lastname"  ng-model="lastname" ng-change="lastnameValidation(lastname)"><br>
+                    <p ng-if="lastnameValid" id="invalidNumber">Please enter lastname</p>
+                </div>
+                <div class="col-6" id="email-validation">
+                    <label for="">Email</label><br>
+                    <input type="email" placeholder="Enter your email" ng-model="email" ng-change="validEmail(email)">
+                    <p id="invalidEmail" ng-if="invalidinput">Invalid Email</p>
+                    <p ng-if="emptyemail">Please enter email</p>
+                </div>
+                <div class="col-6" style="position: relative;">
+                    <label for="">Phonenumber</label><br>
+                   <input type="text" placeholder="Enter your number" class="phonenumber-input" ng-model="number"  ng-change="validNumber(number)" max="10"><br>
+                   <p style="position: absolute; top: 60px; margin-left: 8px;">+91</p>
+                   <p id="invalidNumber" ng-if="lengthNumber">Invalid phonenumber</p>
+                   <p id="invalidNumber" ng-if="invalidNumber">Number must be 10 digits</p>
+                </div>
+                <div class="col-6" style="position: relative;">
+                    <label for="">Password</label><br>
+                    <input type="password" placeholder="Enter your password" ng-model="password" ng-change="passwordValidation(password)"><br>
+                    <p ng-if="passwordValid" id="invalidNumber">Invalid password</p>
+                    <p ng-if="passwordValidEmpty" id="invalidNumber">Password is must</p>
+                </div>
+                <div class="col-6" style="position: relative;">
+                    <label for="">Confirm Password</label><br>
+                    <input type="password" placeholder="Confirm your password" ng-model="confirmpassword" required><br>
+                    <p ng-if="validconfirm" id="invalidNumber">Password does not match</p>
+                </div>
+                <p class="forp">Aldready have an account? <a href="#!/login" ng-click="redirectLogin()">Signin</a></p>
+                <a class="btn register-btn" ng-click="signup(firstname, lastname, email, number, password, confirmpassword)" id="registerDone" type="submit">Signup <img id="loadingDone"></a>
+                <!-- <h2>Successfully registered</h2> -->
+            </form>
+        </div>
+    </div>
+</div>

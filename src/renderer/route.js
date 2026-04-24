@@ -1,0 +1,19 @@
+app.config(function($routeProvider){
+    $routeProvider
+    .when('/',{
+        templateUrl:'./component/landingpage/landingpage.html',
+    })
+    .when('/login',{
+        templateUrl:'./component/loginpage/login.html',
+    })
+    .when('/register',{
+        templateUrl:'./component/registerpage/register.html',
+    })
+    .when('/iscpage',{
+        templateUrl:'./component/iscpage/iscpage.html',
+    })
+    .when('/mainpage',{
+        templateUrl:'./component/mainpage/mainpage.html',
+    })
+   
+})
